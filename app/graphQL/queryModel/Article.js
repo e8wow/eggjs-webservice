@@ -14,7 +14,7 @@ module.exports = `
         updateTime: String
     }
     type Articles { 
-        list:[Article], 
+        list: [Article]!,
         limit: Int, 
         page: Int, 
         total: Int 

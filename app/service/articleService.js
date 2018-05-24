@@ -11,9 +11,11 @@ class ArticleService extends Service {
         return article
     }
 
-    find(body) {
+    async find(body) {
         this.ctx.logger.info(body)
-        return this.ctx.model.Article.find({})
+        const res = await require('../model/Base').findList(this.ctx.model.Article, body)
+        this.ctx.logger.info(res)
+        return res
     }
 }
 
