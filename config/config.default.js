@@ -17,10 +17,14 @@ module.exports = appInfo => {
             // useSession: true
             enable: false // TODO CSRF攻击防范暂时关闭
         },
-        domainWhiteList: ['http://localhost:7001']
+        methodnoallow: {
+            enable: false
+        },
+        domainWhiteList: ['http://localhost:7001', 'http://localhost:3000']
     }
 
     config.cors = {
+        origin: '*',
         allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
         credentials: true
     }
