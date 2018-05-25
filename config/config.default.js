@@ -15,6 +15,7 @@ module.exports = appInfo => {
     config.security = {
         csrf: {
             // useSession: true
+            ignoreJson: true,
             enable: false // TODO CSRF攻击防范暂时关闭
         },
         methodnoallow: {

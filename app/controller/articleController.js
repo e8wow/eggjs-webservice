@@ -7,7 +7,7 @@ class ArticleController extends BaseController {
     }
 
     async find(ctx) {
-        ctx.body = await ctx.service.articleService.find(ctx.request.body)
+        ctx.body = await ctx.service.articleService.find(ctx.query)
     }
 }
 

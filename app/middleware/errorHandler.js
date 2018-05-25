@@ -1,8 +1,9 @@
 module.exports = () => async function errorHandler(ctx, next) {
     try {
         await next()
-    } catch ({status, message, inner}) {
-        console.log(inner.name)
+    } catch (e) {
+        ctx.logger.error(e)
+        const {inner, status} = e
         // console.log(message, status, ctx.acceptJSON)
         switch (status) {
             case 401: {
